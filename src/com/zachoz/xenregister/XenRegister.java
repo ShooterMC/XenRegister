@@ -36,7 +36,7 @@ public class XenRegister extends JavaPlugin {
     public boolean onCommand(final CommandSender sender, Command cmd, String label, final String[] args) {
         if (cmd.getName().equalsIgnoreCase("register")) {
             if (args.length < 1) {
-                sender.sendMessage(ChatColor.RED + "Please specify your email address!");
+                sender.sendMessage(ChatColor.RED + "Por favor, especifica tu email!");
                 return false;
             } else {
                 Bukkit.getScheduler().runTaskAsynchronously(this, new Runnable() {
@@ -44,12 +44,12 @@ public class XenRegister extends JavaPlugin {
                         Random ran = new Random();
                         int x = ran.nextInt(Integer.MAX_VALUE) + 999999; // Generate random number password
                         if (registerUser(sender.getName(), x + "", args[0])) {
-                            sender.sendMessage(ChatColor.DARK_AQUA + "Successfully registered on the forums!!");
-                            sender.sendMessage(ChatColor.DARK_AQUA + "A confirmation email should be " +
-                                    "sent to your email address shortly! Please change your password once you confirm your account!");
+                            sender.sendMessage(ChatColor.DARK_AQUA + "Registrado con exito en nuestra web!!");
+                            sender.sendMessage(ChatColor.DARK_AQUA + "Un email de confirmacion ha sido " +
+                                    "enviado a tu email! Por favor, leelos y sigue las indicaciones!");
                             sender.sendMessage(ChatColor.GOLD + site);
                         } else {
-                            sender.sendMessage(ChatColor.RED + "Registration failed! An account using the same username or email already exists!");
+                            sender.sendMessage(ChatColor.RED + "Registro fallido! Un user con tu mismo usuario o email ya existe");
                         }
                     }
                 });
